@@ -44,7 +44,7 @@
 		return new cron( getTime(time), execute, true);
 	};
 
-	execute.once = function (time, execute) {
+	execute.after = function (time, execute) {
 		return new cron( getTime(time), execute, false);
 	}
 
