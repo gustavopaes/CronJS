@@ -17,8 +17,10 @@
 
 	function cron(time, execute, every) {
 		this.stop = function() {
-			this.stopped = +new Date();
-			clearTimeout(this.id);
+			if(this.id && (every && clearInterval(this.id) || clearTimeout(this.id)) || false) {
+				this.stopped = +new Date();
+				this.id = null;
+			}
 		}
 
 		this.play = function () {
