@@ -15,3 +15,6 @@ var myCron = execute.every("5 seconds", myFunction);
 myCron.stop();
 myCron.play();
 
+Watch all created crons
+execute.exists();
+execute.total();
