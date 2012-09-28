@@ -25,11 +25,12 @@
 		this.stop = function() {
 			if(this.id && this.is_running) {
 				every && clearInterval(this.id) || clearTimeout(this.id);
+				
+				delete crons[this.id];
+				
 				this.stopped    = +new Date();
 				this.is_running = false;
 				this.id         = null;
-
-				delete crons[this.id];
 
 				return true;
 			}
